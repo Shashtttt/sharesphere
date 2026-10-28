@@ -246,11 +246,13 @@ def request_qualification_verification(
 @app.post("/api/qualifications/{id}/verify")
 def verify_qualification(
     id: int,
-    action: str = Query("approve", enum=["approve", "reject"]),
+    action: str = Query("approve"),
     notes: Optional[str] = None,
     current_user: User = Depends(require_roles(["manager", "admin"])),
     db: Session = Depends(get_db)
 ):
+    if action not in ("approve", "reject"):
+        raise HTTPException(status_code=400, detail="Action must be either 'approve' or 'reject'")
     uq = db.query(UserQualification).filter(UserQualification.id == id).first()
     if not uq:
         raise HTTPException(status_code=404, detail="User qualification record not found")
