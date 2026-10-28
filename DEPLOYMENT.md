@@ -91,3 +91,4 @@ Koyeb offers one free Nano service (512MB RAM) with fast build times and continu
 - **Zero CORS Issues**: The frontend calls relative `/api` paths on the exact same origin.
 - **Zero Secrets Required**: Demo accounts are pre-seeded automatically on first startup.
 - **Self-Contained SQLite**: The database file `sharesphere.db` initializes automatically with full demo scenarios.
+
