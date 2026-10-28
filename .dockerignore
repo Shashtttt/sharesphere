@@ -1,0 +1,11 @@
+node_modules
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.git
+.gitignore
+.env
+dist
+.system_generated
+backend/__pycache__
